@@ -17,7 +17,7 @@
 	</description>
 
 	<content src="index.html" />
-    <preference name="phonegap-version" value="cli-9.0.0" />
+    <preference name="phonegap-version" value="cli-8.1.1" />
 	<!-- Using old pgb builder --> 
 	<!-- <preference name='pgb-builder-version' value='1' /> -->
     <preference name="orientation"      value="default" />
@@ -192,7 +192,7 @@
     <platform name="android">
 		<preference name="android-build-tool" value="gradle" />
 		<preference name="android-minSdkVersion" value="19" />
-		<preference name="android-targetSdkVersion" value="28" />
+		<preference name="android-targetSdkVersion" value="26" />
         <preference name="SplashMaintainAspectRatio" value="true"/>
         <preference name="SplashShowOnlyFirstTime" value="true"/>
 		<!-- <framework src="com.facebook.android:facebook-android-sdk:4.25.0" /> -->
