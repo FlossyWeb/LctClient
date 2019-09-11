@@ -97,11 +97,11 @@
     <plugin name="cordova-build-architecture" spec="https://github.com/MBuchalik/cordova-build-architecture.git#v1.0.1" source="git" />  
     <preference name="android-versionCode" value="5723" />
 	<preference name="buildArchitecture" value="x86" />
-	-->
 	<plugin name="cordova-plugin-facebook4" source="npm" spec="5.0.0">
 		<param name="APP_ID" value="1953417441629593" />
 		<param name="APP_NAME" value="LaCentrale.Taxi" />
 	</plugin>
+	-->
 	<plugin name="cordova-plugin-x-socialsharing" source="npm" />
 	<plugin name="com-badrit-contactpicker" source="npm" />
 	<plugin name="cordova-plugin-customurlscheme" source="npm">

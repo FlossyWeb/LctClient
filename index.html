@@ -553,6 +553,7 @@
 			$("#search-box").show("medium");
 		});
 	}
+	/*
 	function fbLogin() {
 		if (!app) { // WebApp only needs init
 			facebookConnectPlugin.browserInit('1953417441629593', 'v3.2');
@@ -605,6 +606,7 @@
 			}
 		});
 	}
+	*/
 	function dc() {
 		$.localStorage.setItem('registeredUser', 'KO');
 		$.mobile.pageContainer.pagecontainer("change", "#connect", { transition: "slide"} );
@@ -1116,8 +1118,8 @@
 							}
 						}
 						else {
-							if(app) navigator.notification.alert('Tarif annoncé : '+data.prix+' €', alertDismissed, 'LaCentrale.Taxi', 'OK');
-							else alert('Tarif annoncé : '+data.prix+' €');
+							//if(app) navigator.notification.alert('Tarif annoncé : '+data.prix+' €', alertDismissed, 'LaCentrale.Taxi', 'OK');
+							//else alert('Tarif annoncé : '+data.prix+' €');
 							$.mobile.pageContainer.pagecontainer("change", "#book_page", { transition: "slide"} );
 						}
 					}, "json").always(function () {
@@ -3521,9 +3523,11 @@
 			</div>
             </center>
         </div>
+		<!--
         <div data-role="footer" data-position="fixed" data-fullscreen="true" class="footer" style="background:none;" id="footer_con">
             <center><input type="image" onClick="fbLogin()" src="visuels/FBconnect.png" width="90%" style="max-width:591px"/></center>
         </div>
+		-->
     </div>
     <div data-role="page" data-theme="c" id="subscription">
         <div data-role="header" data-position="fixed" class="header">
@@ -3546,9 +3550,11 @@
                 </center>
             </div>
         </div>
+		<!--
         <div data-role="footer" class="footer" style="background:none;" data-position="fixed" id="footer_sub">
             <center><input type="image" onClick="fbLogin()" src="visuels/FBconnect.png" width="90%" style="max-width:591px"/></center>
         </div>
+		-->
     </div>
     <div data-role="page" data-theme="c" id="account">
         <div data-role="header" data-position="fixed" class="header">
@@ -3581,9 +3587,11 @@
                 </center>
            </div>
         </div>
+		<!--
         <div data-role="footer" class="footer" style="background:none;" data-position="fixed" id="footer_acc">
             <center><input type="image" onClick="fbLogin()" src="visuels/FBconnect.png" width="90%" style="max-width:591px"/></center>
         </div>
+		-->
     </div>
     <div data-role="page" data-theme="c" id="history">
         <div data-role="header" data-position="fixed" class="header">
@@ -4016,7 +4024,7 @@
             </div>
         </div>
     </div>
-	-->
     <script src="facebook-js-sdk.js"></script>
+	-->
 	</body>
 </html>
