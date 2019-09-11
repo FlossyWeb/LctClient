@@ -1873,7 +1873,7 @@
 					id: 1,
 					title: "LaCentrale.Taxi",
 					text: "Aucun Taxi n'a pris la course, veuillez réessayer SVP.",
-					led: "E7B242",
+					led: { color: '#0069B4', on: 500, off: 500 },
 					badge: badgeNumber
 				});
 				playAudio('sounds/ring.mp3');
@@ -2890,7 +2890,7 @@
 							id: 1,
 							title: "LaCentrale.Taxi",
 							text: toNotify,
-							led: "E7B242",
+							led: { color: '#0069B4', on: 500, off: 500 },
 							badge: badgeNumber,
 							data: { data:toNotify }
 						});
@@ -2969,7 +2969,7 @@
 							id: 1,
 							title: "LaCentrale.Taxi",
 							text: "Un Taxi a pris la course, il va passer vous prendre...",
-							led: "E7B242",
+							led: { color: '#0069B4', on: 500, off: 500 },
 							badge: badgeNumber,
 							data: { data:toNotify }
 						});
