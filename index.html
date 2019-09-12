@@ -160,7 +160,9 @@
 				$("body").empty().append('<img src="no_network.png" width="'+screen.width+'" height="'+screen.height+'" onClick="window.location.reload()" />');
 			}
 			openPdf = cordova.plugins.disusered.open;
-			/*
+			// For iOS => backgroundtask
+			//backgroundtask.start(bgFunctionToRun);
+			
 			// For Android => Enable background mode
 			cordova.plugins.backgroundMode.enable();
 			cordova.plugins.backgroundMode.setDefaults({
@@ -171,9 +173,7 @@
 			//cordova.plugins.backgroundMode.configure({
 			//	title:'App toujours en fonction (3 MINUTES MAX), nous vous informons des courses en cours...'
 			//});
-			*/
-			// For iOS => backgroundtask
-			backgroundtask.start(bgFunctionToRun);
+						
 			// Efficient and batterie saving geolocation...
 			/* USING Plugin V3.X */
 			// BackgroundGeolocation is highly configurable. See platform specific configuration options 
@@ -1222,8 +1222,8 @@
 					else alert('Vous ne pouvez modifier la réservation !!');
 				}
 				else {
-					if(app) navigator.notification.alert('Tarif annoncé : '+data.prix+' €', alertDismissed, 'LaCentrale.Taxi', 'OK');
-					else alert('Tarif annoncé : '+data.prix+' €');
+					//if(app) navigator.notification.alert('Tarif annoncé : '+data.prix+' €', alertDismissed, 'LaCentrale.Taxi', 'OK');
+					//else alert('Tarif annoncé : '+data.prix+' €');
 					$.mobile.pageContainer.pagecontainer("change", "#book_page", { transition: "slide"} );
 				}
 			}, "json").always(function () {
@@ -1323,8 +1323,10 @@
 					else alert('Vous ne pouvez modifier la course !!');
 				}
 				else {
-					if(app) navigator.notification.alert('Tarif annoncé : '+data.prix+' €', alertDismissed, 'LaCentrale.Taxi', 'OK');
-					else alert('Tarif annoncé : '+data.prix+' €');
+					//if(app) navigator.notification.alert('Tarif annoncé : '+data.prix+' €', alertDismissed, 'LaCentrale.Taxi', 'OK');
+					//else alert('Tarif annoncé : '+data.prix+' €');
+					if(app) navigator.notification.alert('La course a bien été modifiée.', alertDismissed, 'LaCentrale.Taxi', 'OK');
+					else alert('La course a bien été modifiée');
 					$.mobile.pageContainer.pagecontainer("change", "#history", { transition: "slide"} );
 					refreshHist();
 				}
