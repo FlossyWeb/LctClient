@@ -351,7 +351,7 @@
 		// GESTION DES BOUTONS MATERIEL
 		// Bouton retour
 		function onBackKeyDown() {
-			navigator.notification.alert("Veuillez ne pas quitter LaCentrale.Taxi pendant la recheche de Véhicules disponibles", alertDismissed, 'LaCentrale.Taxi', 'OK');
+			navigator.notification.alert("Veuillez ne pas quitter LaCentrale.Taxi pendant la recherche de Véhicules disponibles", alertDismissed, 'LaCentrale.Taxi', 'OK');
 		}
 		function onResume() {
 			setTimeout(function() {
@@ -2739,6 +2739,7 @@
 		$.post('https://www.lacentrale.taxi/appserver/app_dcvp_xml.php', {lat: rdvlat, lng: rdvlng, rdv: rdvpoint, dest: dest, type: typecar, howmany: howMany, cb: cb, group: group, dep: dep, zip: zip, insee: insee, pass: 'true'}, function(xml){
 			$(xml).find('marker').each(function(){
 				var name = $(this).attr('name');
+				var city = $(this).attr('city');
 				var address = $(this).attr('address');
 				var lat2 = $(this).attr('lat');
 				var lng2 = $(this).attr('lng');
@@ -2760,7 +2761,7 @@
 				url = url.replace(/(?:\r\n|\r|\n)/g, '<br/>'); // Replaces line breaks by <br/>
 				var mymarker = mapEvent.addMarker({ id: i ,'position': latlng, 'bounds': true, 'title': name, 'icon': cabIcon }).click(function() {
 					//infoCont = '<div id="infoCont"><ul style="color:#333;"><b><li>Taxi Num&eacute;ro : '+name+'</li><li>Distance : '+parseFloat(distance).toFixed(1) + ' Km de vous</li><li>tel : '+address+'</li><li>Prix : '+realcost+'&euro;</li><li>Marque : '+constructor+'</li><li>Mod&egrave;le : '+model+'</li><li>Couleur : '+color+'</li><li>Imatriculation : '+imat+'</li></b></ul></div>';
-					infoCont = '<div id="infoCont"><ul style="color:#333;"><b><li>Taxi Num&eacute;ro : '+name+'</li><li>Distance : '+parseFloat(distance).toFixed(1) + ' Km de vous</li><li>tel : '+address+'</li><li>Marque : '+constructor+'</li><li>Mod&egrave;le : '+model+'</li><li>Couleur : '+color+'</li><li>Imatriculation : '+imat+'</li></b></ul></div>';
+					infoCont = '<div id="infoCont"><ul style="color:#333;"><b><li>Taxi Num&eacute;ro : '+name+'</li><li>Commune : '+city+'</li><li>Distance : '+parseFloat(distance).toFixed(1) + ' Km de vous</li><li>tel : '+address+'</li><li>Marque : '+constructor+'</li><li>Mod&egrave;le : '+model+'</li><li>Couleur : '+color+'</li><li>Imatriculation : '+imat+'</li></b></ul></div>';
 					//callBtn='<button class="ui-btn ui-corner-all ui-shadow ui-btn-c ui-btn-icon-left ui-icon-check cabs" id="' + i + '" onClick="sendJobOpen(\''+ url +'\')">Choisir</button>';
 					//mapEvent.openInfoWindow({ 'content':  infoCont+callBtn}, this);
 					mapEvent.openInfoWindow({ 'content':  infoCont}, this);
