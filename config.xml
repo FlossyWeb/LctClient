@@ -3,8 +3,8 @@
 		xmlns:gap = "http://phonegap.com/ns/1.0"
 		xmlns:android = "http://schemas.android.com/apk/res/android"
 		id = "com.chauffeursvtc.client"
-		version = "1.0.0"
-		android-versionCode="2">
+		version = "1.0.1"
+		android-versionCode="3">
     
     <author href="http://flossyweb.com" email="contact@flossyweb.com">
         FRANCOIS-REGIS SIMON
