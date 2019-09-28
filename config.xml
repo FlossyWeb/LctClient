@@ -4,7 +4,7 @@
 		xmlns:android = "http://schemas.android.com/apk/res/android"
 		id = "com.chauffeursvtc.client"
 		version = "1.0.1"
-		android-versionCode="3">
+		android-versionCode="5">
     
     <author href="http://flossyweb.com" email="contact@flossyweb.com">
         FRANCOIS-REGIS SIMON
