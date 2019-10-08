@@ -3,8 +3,8 @@
 		xmlns:gap = "http://phonegap.com/ns/1.0"
 		xmlns:android = "http://schemas.android.com/apk/res/android"
 		id = "com.chauffeursvtc.client"
-		version = "1.0.1"
-		android-versionCode="5">
+		version = "1.0.2"
+		android-versionCode="6">
     
     <author href="http://flossyweb.com" email="contact@flossyweb.com">
         FRANCOIS-REGIS SIMON
@@ -210,9 +210,9 @@
         <icon density="xxxhdpi" src="res/icon/android/xxxhdpi.png"/>
 
         <!-- Adaptive Icons (https://tibbi.github.io/AndroidAssetStudio/) -->
-		<icon src="res/icons/android/mipmap-hdpi/launcher.png" density="hdpi" /> 
 		<icon src="res/icons/android/mipmap-ldpi/launcher.png" density="ldpi" /> 
 		<icon src="res/icons/android/mipmap-mdpi/launcher.png" density="mdpi" /> 
+		<icon src="res/icons/android/mipmap-hdpi/launcher.png" density="hdpi" /> 
 		<icon src="res/icons/android/mipmap-xhdpi/launcher.png" density="xhdpi" /> 
 		<icon src="res/icons/android/mipmap-xxhdpi/launcher.png" density="xxhdpi" /> 
 		<icon src="res/icons/android/mipmap-xxxhdpi/launcher.png" density="xxxhdpi" />
