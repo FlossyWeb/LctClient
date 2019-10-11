@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="CONTENT-LANGUAGE" content="French">
-    <title>LaCentrale.Taxi App Clients</title>
+    <title>LacentraleTAXI App Clients</title>
 	<link type="image/x-icon" href="visuels/favicon.ico" rel="icon"/>
 	<link type="image/x-icon" href="visuels/favicon.ico" rel="shortcut icon"/>
     <link rel="apple-touch-icon" href="visuels/idev.favicon.png"/>
@@ -136,7 +136,7 @@
 			//if($.localStorage.getItem('registeredUser') != 1)
 			if(($.localStorage.getItem('registeredUser') != 1) && ($.localStorage.getItem('registeredUser') != 'OK'))
 			{
-				//navigator.notification.alert("Valeur du Registre: "+$.localStorage.getItem('registeredUser'), alertDismissed, 'LaCentrale.Taxi', 'OK');
+				//navigator.notification.alert("Valeur du Registre: "+$.localStorage.getItem('registeredUser'), alertDismissed, 'LacentraleTAXI', 'OK');
 				$.mobile.pageContainer.pagecontainer("change", "#connect", { transition: "slide"} );
 			}
 			else {
@@ -202,7 +202,7 @@
 				//  foo: 'bar' // you can also add your own properties
 				//},
 				startForeground: true,
-				notificationTitle: 'LaCentrale.Taxi',
+				notificationTitle: 'LacentraleTAXI',
 				notificationText: 'Suivi de votre position',
 				notificationIconColor: '#4DB58B'
 			});
@@ -265,9 +265,9 @@
 			});
 			*/
 			BackgroundGeolocation.on('error', function(error) {
-				//if(isApp) navigator.notification.alert('BackgroundGeolocation error', App.alertDismissed, 'LaCentrale.Taxi', 'OK');
+				//if(isApp) navigator.notification.alert('BackgroundGeolocation error', App.alertDismissed, 'LacentraleTAXI', 'OK');
 				//else alert('BackgroundGeolocation error');
-				navigator.notification.confirm('Erreur de Géolocalisation, voulez-vous aller dans les réglages afin d\'activer le service de géolocalisation pour cette app ?', 'LaCentrale.Taxi', function() {
+				navigator.notification.confirm('Erreur de Géolocalisation, voulez-vous aller dans les réglages afin d\'activer le service de géolocalisation pour cette app ?', 'LacentraleTAXI', function() {
 					BackgroundGeolocation.showAppSettings();
 				});
 			});
@@ -281,7 +281,7 @@
 						  return BackgroundGeolocation.showAppSettings();
 						}
 						*/
-						navigator.notification.confirm('Erreur de Géolocalisation, voulez-vous aller dans les réglages afin d\'activer le service de géolocalisation pour cette app ?', 'LaCentrale.Taxi', function() {
+						navigator.notification.confirm('Erreur de Géolocalisation, voulez-vous aller dans les réglages afin d\'activer le service de géolocalisation pour cette app ?', 'LacentraleTAXI', function() {
 							BackgroundGeolocation.showAppSettings();
 						});
 					}, 1000);
@@ -314,9 +314,9 @@
 				backgroundGeolocation.finish();
 			};
 			var geoFailureFn = function(error) {
-				//if(app) navigator.notification.alert('BackgroundGeolocation error', alertDismissed, 'LaCentrale.Taxi', 'OK');
+				//if(app) navigator.notification.alert('BackgroundGeolocation error', alertDismissed, 'LacentraleTAXI', 'OK');
 				//else alert('BackgroundGeolocation error');
-				navigator.notification.confirm('Erreur de Géolocalisation, voulez-vous aller dans les réglages afin d\'activer le service de géolocalisation pour cette app ?', 'LaCentrale.Taxi', function() {
+				navigator.notification.confirm('Erreur de Géolocalisation, voulez-vous aller dans les réglages afin d\'activer le service de géolocalisation pour cette app ?', 'LacentraleTAXI', function() {
 					backgroundGeolocation.showAppSettings();
 				});
 			};
@@ -328,7 +328,7 @@
 				activityType: 'Fitness',
 				startForeground: true,
 				// Android only section 
-				notificationTitle: 'LaCentrale.Taxi',
+				notificationTitle: 'LacentraleTAXI',
 				notificationText: 'Suivi de votre position',
 				notificationIconColor: '#FEDD1E',
 				locationProvider: backgroundGeolocation.provider.ANDROID_ACTIVITY_PROVIDER,
@@ -352,7 +352,7 @@
 		// GESTION DES BOUTONS MATERIEL
 		// Bouton retour
 		function onBackKeyDown() {
-			navigator.notification.alert("Veuillez ne pas quitter LaCentrale.Taxi pendant la recherche de Véhicules disponibles", alertDismissed, 'LaCentrale.Taxi', 'OK');
+			navigator.notification.alert("Veuillez ne pas quitter LacentraleTAXI pendant la recherche de Véhicules disponibles", alertDismissed, 'LacentraleTAXI', 'OK');
 		}
 		function onResume() {
 			setTimeout(function() {
@@ -522,7 +522,7 @@
 	{
 		window.plugins.ContactPicker.chooseContact(function(contactInfo) {
 			var number = contactInfo.phones[0];
-			var message = "Téléchargez l'app LaCentrale.Taxi en suivant ce lien : https://www.lacentrale.taxi/stores.php?app=cvclient";
+			var message = "Téléchargez l'app LacentraleTAXI en suivant ce lien : https://www.lacentrale.taxi/stores.php?app=cvclient";
 			var intent = ""; //leave empty for sending sms using default intent
 			var success = function () {
 				//navigator.notification.alert('Message sent successfully');
@@ -596,14 +596,14 @@
 								$.mobile.pageContainer.pagecontainer("change", "#infos", { transition: "slide"} );
 							}
 							else {
-								if(app) navigator.notification.alert('Vous ne pouvez acceder à ce service car le numéro de téléphone fourni n\'a pas été validé, vous devez vous connecter au moins une fois avec les identifiants reçus par sms.', alertDismissed, 'LaCentrale.Taxi', 'OK');
+								if(app) navigator.notification.alert('Vous ne pouvez acceder à ce service car le numéro de téléphone fourni n\'a pas été validé, vous devez vous connecter au moins une fois avec les identifiants reçus par sms.', alertDismissed, 'LacentraleTAXI', 'OK');
 								else alert('Vous ne pouvez acceder à ce service car le numéro de téléphone fourni n\'a pas été validé, vous devez vous connecter au moins une fois avec les identifiants reçus par sms.');
 							}
 						}
 					}, "json");
 				});
 			} else {
-				navigator.notification.alert('ECHEC IDENTIFICATION', alertDismissed, 'LaCentrale.Taxi', 'OK');
+				navigator.notification.alert('ECHEC IDENTIFICATION', alertDismissed, 'LacentraleTAXI', 'OK');
 			}
 		});
 	}
@@ -667,14 +667,14 @@
 					$('#login').val(data.tel);
 					if(data.sms=='1') {
 						/*
-						if(app) navigator.notification.alert('Afin de vérifier votre numéro de mobile vous allez recevoir vos identifiants par sms, nous vous remercions pour votre inscription.', alertDismissed, 'LaCentrale.Taxi', 'OK');
+						if(app) navigator.notification.alert('Afin de vérifier votre numéro de mobile vous allez recevoir vos identifiants par sms, nous vous remercions pour votre inscription.', alertDismissed, 'LacentraleTAXI', 'OK');
 						else alert('Afin de vérifier votre numéro de mobile vous allez recevoir vos identifiants par sms, nous vous remercions pour votre inscription.');
 						*/
-						if(app) navigator.notification.alert('Afin de vérifier votre compte vous allez recevoir vos identifiants par mail, nous vous remercions pour votre inscription.', alertDismissed, 'LaCentrale.Taxi', 'OK');
+						if(app) navigator.notification.alert('Afin de vérifier votre compte vous allez recevoir vos identifiants par mail, nous vous remercions pour votre inscription.', alertDismissed, 'LacentraleTAXI', 'OK');
 						else alert('Afin de vérifier votre compte vous allez recevoir vos identifiants par mail, nous vous remercions pour votre inscription.');					
 					}
 					else {
-						if(app) navigator.notification.alert("Pour une raison technique ou parce que votre numéro de téléphone a généré trop d'envois de sms, nous ne pouvons valider votre compte. Veuillez nous contacter via contact@LaCentrale.Taxi", alertDismissed, 'LaCentrale.Taxi', 'OK');
+						if(app) navigator.notification.alert("Pour une raison technique ou parce que votre numéro de téléphone a généré trop d'envois de sms, nous ne pouvons valider votre compte. Veuillez nous contacter via contact@LaCentrale.Taxi", alertDismissed, 'LacentraleTAXI', 'OK');
 						else alert("Pour une raison technique ou parce que votre numéro de téléphone a généré trop d'envois de sms, nous ne pouvons valider votre compte. Veuillez nous contacter via contact@LaCentrale.Taxi");
 					}
 					$.mobile.pageContainer.pagecontainer("change", "#connect", { transition: "slide"} );
@@ -702,7 +702,7 @@
 			});
 		}
 		else {
-			if(app) navigator.notification.alert('Vous devez saisir un nom !', alertDismissed, 'LaCentrale.Taxi', 'OK');
+			if(app) navigator.notification.alert('Vous devez saisir un nom !', alertDismissed, 'LacentraleTAXI', 'OK');
 			else alert('Vous devez saisir un nom !');					
 		}
 	}
@@ -726,11 +726,11 @@
 				display = '<p style="color:green;"><b>Vous avez bien modifi&eacute; votre compte.</b></p><br>';
 				if(data.check_again == 'YES') {
 					if(data.sms=='1') {
-						if(app) navigator.notification.alert('Vous avez bien modifié votre compte. Afin de re-vérifier votre numéro de mobile vous allez recevoir vos nouveaux identifiants par sms et devrez vous reconnectez avec, nous vous remercions pour votre inscription.', alertDismissed, 'LaCentrale.Taxi', 'OK');
+						if(app) navigator.notification.alert('Vous avez bien modifié votre compte. Afin de re-vérifier votre numéro de mobile vous allez recevoir vos nouveaux identifiants par sms et devrez vous reconnectez avec, nous vous remercions pour votre inscription.', alertDismissed, 'LacentraleTAXI', 'OK');
 						else alert('Vous avez bien modifié votre compte. Afin de re-vérifier votre numéro de mobile vous allez recevoir vos nouveaux identifiants par sms et devrez vous reconnectez avec, nous vous remercions pour votre inscription.');
 					}
 					else {
-						if(app) navigator.notification.alert("Vous avez bien modifié votre compte. Mais pour une raison technique ou parce que votre nouveau numéro de téléphone a générer trop d'envois de sms, nous ne pouvons valider votre compte. Veuillez nous contacter via contact@LaCentrale.Taxi", alertDismissed, 'LaCentrale.Taxi', 'OK');
+						if(app) navigator.notification.alert("Vous avez bien modifié votre compte. Mais pour une raison technique ou parce que votre nouveau numéro de téléphone a générer trop d'envois de sms, nous ne pouvons valider votre compte. Veuillez nous contacter via contact@LaCentrale.Taxi", alertDismissed, 'LacentraleTAXI', 'OK');
 						else alert("Vous avez bien modifié votre compte. Mais pour une raison technique ou parce que votre nouveau numéro de téléphone a générer trop d'envois de sms, nous ne pouvons valider votre compte. Veuillez nous contacter via contact@LaCentrale.Taxi");
 					}
 					$.localStorage.setItem('registeredUser', 'KO');
@@ -768,27 +768,27 @@
 		$.post("https://www.lacentrale.taxi/taxioffsrv/sendtext.php", { tel: $('#smsTel').val(), kinda: 'user'}, function(data) {
 			if (data.valid_check=='KO') {
 				if (data.sms=='1') {
-					if(app) navigator.notification.alert('Afin de vérifier votre numéro de mobile vous allez recevoir vos identifiants par sms, nous vous remercions pour votre inscription.', alertDismissed, 'LaCentrale.Taxi', 'OK');
+					if(app) navigator.notification.alert('Afin de vérifier votre numéro de mobile vous allez recevoir vos identifiants par sms, nous vous remercions pour votre inscription.', alertDismissed, 'LacentraleTAXI', 'OK');
 					else alert('Afin de vérifier votre numéro de mobile vous allez recevoir vos identifiants par sms, nous vous remercions pour votre inscription.');
 				}
 				else {
-					//if(app) navigator.notification.alert("Pour une raison technique ou parce que votre numéro de téléphone a générer trop d'envois de sms, nous ne pouvons valider votre compte. Veuillez nous contacter via contact@LaCentrale.Taxi", alertDismissed, 'LaCentrale.Taxi', 'OK');
+					//if(app) navigator.notification.alert("Pour une raison technique ou parce que votre numéro de téléphone a générer trop d'envois de sms, nous ne pouvons valider votre compte. Veuillez nous contacter via contact@LaCentrale.Taxi", alertDismissed, 'LacentraleTAXI', 'OK');
 					//else alert("Pour une raison technique ou parce que votre numéro de téléphone a générer trop d'envois de sms, nous ne pouvons valider votre compte. Veuillez nous contacter via contact@LaCentrale.Taxi");
-					if(app) navigator.notification.alert("Pour une raison technique nous ne pouvons valider votre compte. Veuillez nous contacter via contact@LaCentrale.Taxi", alertDismissed, 'LaCentrale.Taxi', 'OK');
+					if(app) navigator.notification.alert("Pour une raison technique nous ne pouvons valider votre compte. Veuillez nous contacter via contact@LaCentrale.Taxi", alertDismissed, 'LacentraleTAXI', 'OK');
 					else alert("Pour une raison technique nous ne pouvons valider votre compte. Veuillez nous contacter via contact@LaCentrale.Taxi");
 				}
 			}
 			else if (data.valid_check=='OK') {
-				if(app) navigator.notification.alert('Ce numéro de téléphone a déjà été validé, vous devriez pouvoir vous connecter.', alertDismissed, 'LaCentrale.Taxi', 'OK');
+				if(app) navigator.notification.alert('Ce numéro de téléphone a déjà été validé, vous devriez pouvoir vous connecter.', alertDismissed, 'LacentraleTAXI', 'OK');
 				else alert('Ce numéro de téléphone a déjà été validé, vous devriez pouvoir vous connecter.');
 			}
 			else {
-				if(app) navigator.notification.alert("Ce numéro de téléphone n'est probablement associé à aucun compte !!", alertDismissed, 'LaCentrale.Taxi', 'OK');
+				if(app) navigator.notification.alert("Ce numéro de téléphone n'est probablement associé à aucun compte !!", alertDismissed, 'LacentraleTAXI', 'OK');
 				else alert("Ce numéro de téléphone n'est probablement associé à aucun compte !!");
 			}
 			if (data.telvalid === false)
 			{
-				if(app) navigator.notification.alert("Ce numéro de téléphone fourni n'est pas valide: nous attendons 10 chiffres sans espaces et commençant par 06 ou 07.", alertDismissed, 'LaCentrale.Taxi', 'OK');
+				if(app) navigator.notification.alert("Ce numéro de téléphone fourni n'est pas valide: nous attendons 10 chiffres sans espaces et commençant par 06 ou 07.", alertDismissed, 'LacentraleTAXI', 'OK');
 				else alert("Ce numéro de téléphone fourni n'est pas valide: nous attendons 10 chiffres sans espaces et commençant par 06 ou 07.");
 			}
 		}, "json").always(function(data) {
@@ -1090,7 +1090,7 @@
 					}
 					/*
 					else {
-						if(app) navigator.notification.alert('Adresse inconnue !!', alertDismissed, 'LaCentrale.Taxi', 'OK');
+						if(app) navigator.notification.alert('Adresse inconnue !!', alertDismissed, 'LacentraleTAXI', 'OK');
 						else alert('Adresse inconnue !!');
 					}
 					*/
@@ -1103,11 +1103,11 @@
 							//navigator.notification.alert('Vous ne pouvez reserver un taxi que si le RDV est dans plus de 60 minutes !!');
 							//Sending as direct job
 							if(data.past=='PAST') {
-								if(app) navigator.notification.alert('La date du RDV est passée !!', alertDismissed, 'LaCentrale.Taxi', 'OK');
+								if(app) navigator.notification.alert('La date du RDV est passée !!', alertDismissed, 'LacentraleTAXI', 'OK');
 								else alert('La date du RDV est passée !!');
 							}
 							else if(data.past=='WEEK') {
-								if(app) navigator.notification.alert('Désolé, vous ne pouvez pas réserver nos prestations plus de 7 jours à l’avance.', alertDismissed, 'LaCentrale.Taxi', 'OK');
+								if(app) navigator.notification.alert('Désolé, vous ne pouvez pas réserver nos prestations plus de 7 jours à l’avance.', alertDismissed, 'LacentraleTAXI', 'OK');
 								else alert('Désolé, vous ne pouvez pas réserver nos prestations plus de 7 jours à l’avance.');
 							}
 							else if(data.past=='NOW') {
@@ -1119,7 +1119,7 @@
 							}
 						}
 						else {
-							//if(app) navigator.notification.alert('Tarif annoncé : '+data.prix+' €', alertDismissed, 'LaCentrale.Taxi', 'OK');
+							//if(app) navigator.notification.alert('Tarif annoncé : '+data.prix+' €', alertDismissed, 'LacentraleTAXI', 'OK');
 							//else alert('Tarif annoncé : '+data.prix+' €');
 							$.mobile.pageContainer.pagecontainer("change", "#book_page", { transition: "slide"} );
 						}
@@ -1130,12 +1130,12 @@
 			}
 			else if(cb=='') {
 				$('#booking').prop('disabled', false).removeClass('ui-disabled');
-				if(app) navigator.notification.alert('Veuillez préciser un moyen de paiement SVP...', alertDismissed, 'LaCentrale.Taxi', 'OK');
+				if(app) navigator.notification.alert('Veuillez préciser un moyen de paiement SVP...', alertDismissed, 'LacentraleTAXI', 'OK');
 				else alert('Veuillez préciser un moyen de paiement SVP...');
 			}
 			else {
 				$('#booking').prop('disabled', false).removeClass('ui-disabled');
-				if(app) navigator.notification.alert('Veuillez renseigner une adresse de départ (ou attendre la fin de la géolocalisation), ainsi qu\'une adresse de destination SVP...', alertDismissed, 'LaCentrale.Taxi', 'OK');
+				if(app) navigator.notification.alert('Veuillez renseigner une adresse de départ (ou attendre la fin de la géolocalisation), ainsi qu\'une adresse de destination SVP...', alertDismissed, 'LacentraleTAXI', 'OK');
 				else alert('Veuillez renseigner une adresse de départ (ou attendre la fin de la géolocalisation), ainsi qu\'une adresse de destination SVP...');
 			}
 		}
@@ -1219,11 +1219,11 @@
 			$.post("https://www.lacentrale.taxi/appserver/bookings_app_mod.php", url, function(data) {
 				//$('#resmod').append(data.req);
 				if(!data.ok) {
-					if(app) navigator.notification.alert('Vous ne pouvez modifier la réservation !!', alertDismissed, 'LaCentrale.Taxi', 'OK');
+					if(app) navigator.notification.alert('Vous ne pouvez modifier la réservation !!', alertDismissed, 'LacentraleTAXI', 'OK');
 					else alert('Vous ne pouvez modifier la réservation !!');
 				}
 				else {
-					//if(app) navigator.notification.alert('Tarif annoncé : '+data.prix+' €', alertDismissed, 'LaCentrale.Taxi', 'OK');
+					//if(app) navigator.notification.alert('Tarif annoncé : '+data.prix+' €', alertDismissed, 'LacentraleTAXI', 'OK');
 					//else alert('Tarif annoncé : '+data.prix+' €');
 					$.mobile.pageContainer.pagecontainer("change", "#book_page", { transition: "slide"} );
 				}
@@ -1236,25 +1236,25 @@
 		else if(newWhen=='') {
 			$('#bookingMod').attr('disable', false);
 			$.mobile.loading( "hide" );
-			if(app) navigator.notification.alert('Afin de modifier la réservation, vous devez renseigner une date de RDV !!', alertDismissed, 'LaCentrale.Taxi', 'OK');
+			if(app) navigator.notification.alert('Afin de modifier la réservation, vous devez renseigner une date de RDV !!', alertDismissed, 'LacentraleTAXI', 'OK');
 			else alert('Afin de modifier la réservation, vous devez renseigner une date de RDV !!');
 		}
 		else if(newAdd=='') {
 			$('#bookingMod').attr('disable', false);
 			$.mobile.loading( "hide" );
-			if(app) navigator.notification.alert('Afin de modifier la réservation, vous devez renseigner une adresse de RDV !!', alertDismissed, 'LaCentrale.Taxi', 'OK');
+			if(app) navigator.notification.alert('Afin de modifier la réservation, vous devez renseigner une adresse de RDV !!', alertDismissed, 'LacentraleTAXI', 'OK');
 			else alert('Afin de modifier la réservation, vous devez renseigner une adresse de RDV !!');
 		}
 		else if(newDest=='') {
 			$('#bookingMod').attr('disable', false);
 			$.mobile.loading( "hide" );
-			if(app) navigator.notification.alert('Afin de modifier la réservation, vous devez renseigner une adresse de destination !!', alertDismissed, 'LaCentrale.Taxi', 'OK');
+			if(app) navigator.notification.alert('Afin de modifier la réservation, vous devez renseigner une adresse de destination !!', alertDismissed, 'LacentraleTAXI', 'OK');
 			else alert('Afin de modifier la réservation, vous devez renseigner une adresse de destination !!');
 		}
 		else {
 			$('#bookingMod').attr('disable', false);
 			$.mobile.loading( "hide" );
-			if(app) navigator.notification.alert('Afin de modifier la réservation, vous devez renseigner une date de RDV ainsi que les adresse de départ et d\'arrivée !!', alertDismissed, 'LaCentrale.Taxi', 'OK');
+			if(app) navigator.notification.alert('Afin de modifier la réservation, vous devez renseigner une date de RDV ainsi que les adresse de départ et d\'arrivée !!', alertDismissed, 'LacentraleTAXI', 'OK');
 			else alert('Afin de modifier la réservation, vous devez renseigner une date de RDV ainsi que les adresse de départ et d\'arrivée !!');
 		}
 	}
@@ -1320,13 +1320,13 @@
 			$.post("https://www.lacentrale.taxi/appserver/drinking_app_mod.php", url, function(data) {
 				//$('#resmodrink').append(data.req);
 				if(!data.ok) {
-					if(app) navigator.notification.alert('Vous ne pouvez modifier la course !!', alertDismissed, 'LaCentrale.Taxi', 'OK');
+					if(app) navigator.notification.alert('Vous ne pouvez modifier la course !!', alertDismissed, 'LacentraleTAXI', 'OK');
 					else alert('Vous ne pouvez modifier la course !!');
 				}
 				else {
-					//if(app) navigator.notification.alert('Tarif annoncé : '+data.prix+' €', alertDismissed, 'LaCentrale.Taxi', 'OK');
+					//if(app) navigator.notification.alert('Tarif annoncé : '+data.prix+' €', alertDismissed, 'LacentraleTAXI', 'OK');
 					//else alert('Tarif annoncé : '+data.prix+' €');
-					if(app) navigator.notification.alert('La course a bien été modifiée.', alertDismissed, 'LaCentrale.Taxi', 'OK');
+					if(app) navigator.notification.alert('La course a bien été modifiée.', alertDismissed, 'LacentraleTAXI', 'OK');
 					else alert('La course a bien été modifiée');
 					$.mobile.pageContainer.pagecontainer("change", "#history", { transition: "slide"} );
 					refreshHist();
@@ -1340,19 +1340,19 @@
 		else if(newAdd=='') {
 			$('#drinkingMod').attr('disable', false);
 			$.mobile.loading( "hide" );
-			if(app) navigator.notification.alert('Afin de modifier la course, vous devez renseigner une adresse de RDV !!', alertDismissed, 'LaCentrale.Taxi', 'OK');
+			if(app) navigator.notification.alert('Afin de modifier la course, vous devez renseigner une adresse de RDV !!', alertDismissed, 'LacentraleTAXI', 'OK');
 			else alert('Afin de modifier la course, vous devez renseigner une adresse de RDV !!');
 		}
 		else if(newDest=='') {
 			$('#drinkingMod').attr('disable', false);
 			$.mobile.loading( "hide" );
-			if(app) navigator.notification.alert('Afin de modifier la course, vous devez renseigner une adresse de destination !!', alertDismissed, 'LaCentrale.Taxi', 'OK');
+			if(app) navigator.notification.alert('Afin de modifier la course, vous devez renseigner une adresse de destination !!', alertDismissed, 'LacentraleTAXI', 'OK');
 			else alert('Afin de modifier la course, vous devez renseigner une adresse de destination !!');
 		}
 		else {
 			$('#drinkingMod').attr('disable', false);
 			$.mobile.loading( "hide" );
-			if(app) navigator.notification.alert('Afin de modifier la course, vous devez renseigner une date de RDV ainsi que les adresse de départ et d\'arrivée !!', alertDismissed, 'LaCentrale.Taxi', 'OK');
+			if(app) navigator.notification.alert('Afin de modifier la course, vous devez renseigner une date de RDV ainsi que les adresse de départ et d\'arrivée !!', alertDismissed, 'LacentraleTAXI', 'OK');
 			else alert('Afin de modifier la course, vous devez renseigner une date de RDV ainsi que les adresse de départ et d\'arrivée !!');
 		}
 	}
@@ -1360,11 +1360,11 @@
 	{
 		$.post("https://www.lacentrale.taxi/appserver/bookings_app_mod.php", {idcourse: id, dep: deldep, del: 1, db: 1}, function(data) {
 			if(!data.ok) {
-				if(app) navigator.notification.alert('Vous ne pouvez pas annuler cette réservation !!', alertDismissed, 'LaCentrale.Taxi', 'OK');
+				if(app) navigator.notification.alert('Vous ne pouvez pas annuler cette réservation !!', alertDismissed, 'LacentraleTAXI', 'OK');
 				else alert('Vous ne pouvez modifier la réservation !!');
 			}
 			else {
-				if(app) navigator.notification.alert('La réservation à bien été annulée !!', alertDismissed, 'LaCentrale.Taxi', 'OK');
+				if(app) navigator.notification.alert('La réservation à bien été annulée !!', alertDismissed, 'LacentraleTAXI', 'OK');
 				else alert('La réservation à bien été annulée !!');
 				refreshHist();
 			}
@@ -1514,7 +1514,7 @@
 			// special_need_vehicle needs the opendata...
 			if ($(this).val()=='special_need_vehicle') {
 				$('#tm-box').hide();
-				if(app) navigator.notification.alert('Afin d\'obtenir un transport pour personne à mobilité réduite (TPMR), vous devez "choisir un Taxi" (la "Proposition automatique" est donc désactivée).', alertDismissed, 'LaCentrale.Taxi', 'OK');
+				if(app) navigator.notification.alert('Afin d\'obtenir un transport pour personne à mobilité réduite (TPMR), vous devez "choisir un Taxi" (la "Proposition automatique" est donc désactivée).', alertDismissed, 'LacentraleTAXI', 'OK');
 				else alert('Afin d\'obtenir un transport pour personne à mobilité réduite (TPMR), vous devez "choisir un Taxi" (la "Proposition automatique" est donc désactivée).');
 			}
 			else	$('#tm-box').show();
@@ -1523,7 +1523,7 @@
 			// pet_accepted needs the opendata...
 			if ($(this).val()=='pet_accepted') {
 				$('#tm-box').hide();
-				if(app) navigator.notification.alert('Si vous désirez embarquer un animal, vous devez "choisir un Taxi" (la "Proposition automatique" est donc désactivée).', alertDismissed, 'LaCentrale.Taxi', 'OK');
+				if(app) navigator.notification.alert('Si vous désirez embarquer un animal, vous devez "choisir un Taxi" (la "Proposition automatique" est donc désactivée).', alertDismissed, 'LacentraleTAXI', 'OK');
 				else alert('Si vous désirez embarquer un animal, vous devez "choisir un Taxi" (la "Proposition automatique" est donc désactivée).');
 			}
 			else	$('#tm-box').show();
@@ -1598,7 +1598,7 @@
 			}
 		}
 		else {
-			if(app) navigator.notification.alert("Localisation impossible, veuillez v&eacute;rifier l'&eacute;tat de votre connection ainsi que la disponibilit&eacute; des services de localisation dans les réglages de votre appareil.", alertDismissed, 'LaCentrale.Taxi', 'OK');
+			if(app) navigator.notification.alert("Localisation impossible, veuillez v&eacute;rifier l'&eacute;tat de votre connection ainsi que la disponibilit&eacute; des services de localisation dans les réglages de votre appareil.", alertDismissed, 'LacentraleTAXI', 'OK');
 			else alert("Localisation impossible, veuillez v&eacute;rifier l'&eacute;tat de votre connection ainsi que la disponibilit&eacute; des services de localisation dans les réglages de votre appareil.");
 		}
 	}
@@ -1621,7 +1621,7 @@
 				$.sessionStorage.setItem('dep', dep);
 			}
 			else {
-				if(app) navigator.notification.alert('Adresse inconnue !! Veuillez la saisir manuellement SVP.', alertDismissed, 'LaCentrale.Taxi', 'OK');
+				if(app) navigator.notification.alert('Adresse inconnue !! Veuillez la saisir manuellement SVP.', alertDismissed, 'LacentraleTAXI', 'OK');
 				else alert('Adresse inconnue !! Veuillez la saisir manuellement SVP.');
 			}
 		}, "json").done(function() { 
@@ -1672,12 +1672,12 @@
 					}
 				}
 				else {
-					if(app) navigator.notification.alert('Adresse inconnue !!', alertDismissed, 'LaCentrale.Taxi', 'OK');
+					if(app) navigator.notification.alert('Adresse inconnue !!', alertDismissed, 'LacentraleTAXI', 'OK');
 					else alert('Adresse inconnue !!');
 				}
 			}
 			else {
-				if(app) navigator.notification.alert('Geocoder failed due to: ' + status, alertDismissed, 'LaCentrale.Taxi', 'OK');
+				if(app) navigator.notification.alert('Geocoder failed due to: ' + status, alertDismissed, 'LacentraleTAXI', 'OK');
 				else alert(geoAlert);
 			}
 		});
@@ -1712,13 +1712,13 @@
 			// Fall back to low accuracy and any cached position available...
 			navigator.geolocation.getCurrentPosition(codeLatLng, function(){
 				//$( "#errorPop" ).popup( "open", { positionTo: "window" } );
-				if(app) navigator.notification.alert(geoAlert, alertDismissed, 'LaCentrale.Taxi', 'OK');
+				if(app) navigator.notification.alert(geoAlert, alertDismissed, 'LacentraleTAXI', 'OK');
 				else alert(geoAlert);
 			},{enableHighAccuracy:false, maximumAge:Infinity, timeout: 6000});
 		}
 		else {
 			//$( "#errorPop" ).popup( "open", { positionTo: "window" } );
-			if(app) navigator.notification.alert(geoAlert, alertDismissed, 'LaCentrale.Taxi', 'OK');
+			if(app) navigator.notification.alert(geoAlert, alertDismissed, 'LacentraleTAXI', 'OK');
 			else alert(geoAlert);
 		}
 	}
@@ -1765,22 +1765,22 @@
 			*/
 		}
 		else if (isPayment=='') {
-			if(app) navigator.notification.alert('Veuillez préciser un moyen de paiement SVP...', alertDismissed, 'LaCentrale.Taxi', 'OK');
+			if(app) navigator.notification.alert('Veuillez préciser un moyen de paiement SVP...', alertDismissed, 'LacentraleTAXI', 'OK');
 			else alert('Veuillez préciser un moyen de paiement SVP...');
 			$('#search').prop('disabled', false).removeClass('ui-disabled'); // Button is back
 		}
 		else if (isDate!='' && isWhen=='') {
-			if(app) navigator.notification.alert('Vous avez spécifié une date de RDV, si vous souhaitez réserver, veuillez préciser un horaire, sinon effacer la date !', alertDismissed, 'LaCentrale.Taxi', 'OK');
+			if(app) navigator.notification.alert('Vous avez spécifié une date de RDV, si vous souhaitez réserver, veuillez préciser un horaire, sinon effacer la date !', alertDismissed, 'LacentraleTAXI', 'OK');
 			else alert('Vous avez spécifié une date de RDV, si vous souhaitez réserver, veuillez préciser un horaire, sinon effacer la date !');
 			$('#search').prop('disabled', false).removeClass('ui-disabled'); // Button is back
 		}
 		else if (isDate=='' && isWhen!='') {
-			if(app) navigator.notification.alert('Vous avez spécifié une heure de RDV, si vous souhaitez réserver, veuillez préciser une date, sinon effacer l\'heure !', alertDismissed, 'LaCentrale.Taxi', 'OK');
+			if(app) navigator.notification.alert('Vous avez spécifié une heure de RDV, si vous souhaitez réserver, veuillez préciser une date, sinon effacer l\'heure !', alertDismissed, 'LacentraleTAXI', 'OK');
 			else alert('Vous avez spécifié une heure de RDV, si vous souhaitez réserver, veuillez préciser une date, sinon effacer l\'heure !');
 			$('#search').prop('disabled', false).removeClass('ui-disabled'); // Button is back
 		}
 		else {
-			if(app) navigator.notification.alert('Veuillez renseigner une adresse de départ (ou attendre la fin de la géolocalisation), ainsi qu\'une adresse de destination SVP...', alertDismissed, 'LaCentrale.Taxi', 'OK');
+			if(app) navigator.notification.alert('Veuillez renseigner une adresse de départ (ou attendre la fin de la géolocalisation), ainsi qu\'une adresse de destination SVP...', alertDismissed, 'LacentraleTAXI', 'OK');
 			else alert('Veuillez renseigner une adresse de départ (ou attendre la fin de la géolocalisation), ainsi qu\'une adresse de destination SVP...');
 			$('#search').prop('disabled', false).removeClass('ui-disabled'); // Button is back
 		}
@@ -1876,7 +1876,7 @@
 				badgeNumber = 1;
 				cordova.plugins.notification.local.schedule({
 					id: 1,
-					title: "LaCentrale.Taxi",
+					title: "LacentraleTAXI",
 					text: "Aucun Taxi n'a pris la course, veuillez réessayer SVP.",
 					led: { color: '#0069B4', on: 500, off: 500 },
 					badge: badgeNumber
@@ -1920,7 +1920,7 @@
 				searchLocationsNearNoMap(data.features[0].geometry.coordinates[1], data.features[0].geometry.coordinates[0]);
 			}
 			else {
-				if(app) navigator.notification.alert('Adresse inconnue !! Veuillez la saisir manuellement SVP.', alertDismissed, 'LaCentrale.Taxi', 'OK');
+				if(app) navigator.notification.alert('Adresse inconnue !! Veuillez la saisir manuellement SVP.', alertDismissed, 'LacentraleTAXI', 'OK');
 				else alert('Adresse inconnue !! Veuillez la saisir manuellement SVP.');
 			}
 		}).always(function(data) { 
@@ -1976,7 +1976,7 @@
 					
 					//searchLocationsNear(myPlace, self);
 				} else {
-					if(app) navigator.notification.alert(address + ' NON TROUVEE ', alertDismissed, 'LaCentrale.Taxi', 'OK');
+					if(app) navigator.notification.alert(address + ' NON TROUVEE ', alertDismissed, 'LacentraleTAXI', 'OK');
 					else alert(address + ' NON TROUVEE ');
 					$.mobile.pageContainer.pagecontainer("change", "#infos", { transition: "slide", reverse: true} );
 				}
@@ -2085,18 +2085,18 @@
 					});
 				}
 				else {
-					if(app) navigator.notification.alert('Vous ne pouvez suivre un Taxi que 30 minutes avant le RDV !!', alertDismissed, 'LaCentrale.Taxi', 'OK');
+					if(app) navigator.notification.alert('Vous ne pouvez suivre un Taxi que 30 minutes avant le RDV !!', alertDismissed, 'LacentraleTAXI', 'OK');
 					else alert('Vous ne pouvez suivre un Taxi que 30 minutes avant le RDV !!');
 					//document.location.href='index.html';
 					$.mobile.pageContainer.pagecontainer("change", "#history", { transition: "slide"} );
 				}
 				if(data.status=='incident_taxi') {
-					if(app) navigator.notification.alert('Le chauffeur à déclaré un incident l\'empêchant de venir vous chercher !', alertDismissed, 'LaCentrale.Taxi', 'OK');
+					if(app) navigator.notification.alert('Le chauffeur à déclaré un incident l\'empêchant de venir vous chercher !', alertDismissed, 'LacentraleTAXI', 'OK');
 					else alert('Le chauffeur à déclaré un incident l\'empêchant de venir vous chercher !');
 					$.mobile.pageContainer.pagecontainer("change", "#history", { transition: "slide"} );
 				}
 			}, "json").fail(function (jqXHR, textStatus, errorThrown) {
-				navigator.notification.alert('Erreur inconnue, le serveur ou la connexion internet sont indisponibles. ' + textStatus+', '+ errorThrown, alertDismissed, 'LaCentrale.Taxi Erreur', 'OK');
+				navigator.notification.alert('Erreur inconnue, le serveur ou la connexion internet sont indisponibles. ' + textStatus+', '+ errorThrown, alertDismissed, 'LacentraleTAXI Erreur', 'OK');
 			});
 			track = setInterval( function () {
 				//$.post('https://www.lacentrale.taxi/appserver/open_follow.php', {  hail_id: hail_id }, function(data){
@@ -2126,13 +2126,13 @@
 					}
 					else {
 						clearInterval(track);
-						if(app) navigator.notification.alert('Vous ne pouvez suivre un Taxi que 30 minutes avant le RDV !!', alertDismissed, 'LaCentrale.Taxi', 'OK');
+						if(app) navigator.notification.alert('Vous ne pouvez suivre un Taxi que 30 minutes avant le RDV !!', alertDismissed, 'LacentraleTAXI', 'OK');
 						else alert('Vous ne pouvez suivre un Taxi que 30 minutes avant le RDV !!');
 						$.mobile.pageContainer.pagecontainer("change", "#history", { transition: "slide"} );
 					}
 					if(data.status=='incident_taxi') {
 						clearInterval(track);
-						if(app) navigator.notification.alert('Le chauffeur à déclaré un incident l\'empêchant de venir vous chercher !', alertDismissed, 'LaCentrale.Taxi', 'OK');
+						if(app) navigator.notification.alert('Le chauffeur à déclaré un incident l\'empêchant de venir vous chercher !', alertDismissed, 'LacentraleTAXI', 'OK');
 						else alert('Le chauffeur à déclaré un incident l\'empêchant de venir vous chercher !');
 						$.mobile.pageContainer.pagecontainer("change", "#history", { transition: "slide"} );
 					}
@@ -2197,7 +2197,7 @@
 						'clickable': true 
 					});
 				} else {
-					if(app) navigator.notification.alert('ADRESSE RDV : '+address+' NON TROUVEE ', alertDismissed, 'LaCentrale.Taxi', 'OK');
+					if(app) navigator.notification.alert('ADRESSE RDV : '+address+' NON TROUVEE ', alertDismissed, 'LacentraleTAXI', 'OK');
 					else alert('ADRESSE RDV : '+address+' NON TROUVEE ');
 				}
 			});
@@ -2214,13 +2214,13 @@
 				}
 				else {
 					clearInterval(track);
-					if(app) navigator.notification.alert('Vous ne pouvez suivre un Taxi que 30 minutes avant le RDV !!', alertDismissed, 'LaCentrale.Taxi', 'OK');
+					if(app) navigator.notification.alert('Vous ne pouvez suivre un Taxi que 30 minutes avant le RDV !!', alertDismissed, 'LacentraleTAXI', 'OK');
 					else alert('Vous ne pouvez suivre un Taxi que 30 minutes avant le RDV !!');
 					//document.location.href='index.html';
 					$.mobile.pageContainer.pagecontainer("change", "#history", { transition: "slide"} );
 				}
 			}, "json").fail(function (jqXHR, textStatus, errorThrown) {
-				navigator.notification.alert('Erreur inconnue, le serveur ou la connexion internet sont indisponibles. ' + textStatus+', '+ errorThrown, alertDismissed, 'LaCentrale.Taxi Erreur', 'OK');
+				navigator.notification.alert('Erreur inconnue, le serveur ou la connexion internet sont indisponibles. ' + textStatus+', '+ errorThrown, alertDismissed, 'LacentraleTAXI Erreur', 'OK');
 			});
 			track = setInterval( function () {
 				$.post('https://www.lacentrale.taxi/appserver/follow.php', { taxi: ftaxi, idcourse: fidcourse, dep: fdep, tel: ftel, table: ftable }, function(data){
@@ -2248,7 +2248,7 @@
 					}
 					else {
 						clearInterval(track);
-						if(app) navigator.notification.alert('Vous ne pouvez suivre un Taxi que 30 minutes avant le RDV !!', alertDismissed, 'LaCentrale.Taxi', 'OK');
+						if(app) navigator.notification.alert('Vous ne pouvez suivre un Taxi que 30 minutes avant le RDV !!', alertDismissed, 'LacentraleTAXI', 'OK');
 						else alert('Vous ne pouvez suivre un Taxi que 30 minutes avant le RDV !!');
 						$.mobile.pageContainer.pagecontainer("change", "#history", { transition: "slide"} );
 					}
@@ -2398,12 +2398,12 @@
 			if(!openAvail) {
 				// special_need_vehicle needs the opendata...
 				if ($('#Pmr').val()=='special_need_vehicle') {
-					if(app) navigator.notification.alert('Vous ne pouvez obtenir de transport pour personne à mobilité réduite (TPMR)car, il semblerait qu\'aucun vehicule de ce type ne se trouve dans cette zone, désolé.', alertDismissed, 'LaCentrale.Taxi', 'OK');
+					if(app) navigator.notification.alert('Vous ne pouvez obtenir de transport pour personne à mobilité réduite (TPMR)car, il semblerait qu\'aucun vehicule de ce type ne se trouve dans cette zone, désolé.', alertDismissed, 'LacentraleTAXI', 'OK');
 					else alert('Vous ne pouvez obtenir de transport pour personne à mobilité réduite (TPMR)car, il semblerait qu\'aucun vehicule de ce type ne se trouve dans cette zone, désolé.');
 					$.mobile.pageContainer.pagecontainer("change", "#infos", { transition: "slide"} );
 				}
 				else {
-					if(app) navigator.notification.alert("Aucun Taxi trouvé dans la zone réglementée sans frais d'approche.\nVous allez être redirigé.", alertDismissed, 'LaCentrale.Taxi', 'OK');
+					if(app) navigator.notification.alert("Aucun Taxi trouvé dans la zone réglementée sans frais d'approche.\nVous allez être redirigé.", alertDismissed, 'LacentraleTAXI', 'OK');
 					else alert("Aucun Taxi trouvé dans la zone réglementée sans frais d'approche.\nVous allez être redirigé.");
 					idcourse=''; // reset idcourse
 					$('#map_open').gmap('destroy');
@@ -2500,12 +2500,12 @@
 				if(!openAvail) {
 					// special_need_vehicle needs the opendata...
 					if ($('#Pmr').val()=='special_need_vehicle') {
-						if(app) navigator.notification.alert('Vous ne pouvez obtenir de transport pour personne à mobilité réduite (TPMR)car, il semblerait qu\'aucun vehicule de ce type ne se trouve dans cette zone, désolé.', alertDismissed, 'LaCentrale.Taxi', 'OK');
+						if(app) navigator.notification.alert('Vous ne pouvez obtenir de transport pour personne à mobilité réduite (TPMR)car, il semblerait qu\'aucun vehicule de ce type ne se trouve dans cette zone, désolé.', alertDismissed, 'LacentraleTAXI', 'OK');
 						else alert('Vous ne pouvez obtenir de transport pour personne à mobilité réduite (TPMR)car, il semblerait qu\'aucun vehicule de ce type ne se trouve dans cette zone, désolé.');
 						$.mobile.pageContainer.pagecontainer("change", "#infos", { transition: "slide"} );
 					}
 					else {
-						if(app) navigator.notification.alert("Aucun Taxi trouvé dans la zone réglementée sans frais d'approche.\nVous allez être redirigé.", alertDismissed, 'LaCentrale.Taxi', 'OK');
+						if(app) navigator.notification.alert("Aucun Taxi trouvé dans la zone réglementée sans frais d'approche.\nVous allez être redirigé.", alertDismissed, 'LacentraleTAXI', 'OK');
 						else alert("Aucun Taxi trouvé dans la zone réglementée sans frais d'approche.\nVous allez être redirigé.");
 						idcourse=''; // reset idcourse
 						$('#map_open').gmap('destroy');
@@ -2525,7 +2525,7 @@
 		}
 		//$.mobile.loading( "hide" );
 		if(i==0) {
-			if(app) navigator.notification.alert('Aucun Taxi touvé', alertDismissed, 'LaCentrale.Taxi', 'OK');
+			if(app) navigator.notification.alert('Aucun Taxi touvé', alertDismissed, 'LacentraleTAXI', 'OK');
 			else alert('AUCUN Taxi TROUVE !!');
 			document.location.href='index.html';
 		}*/
@@ -2636,11 +2636,11 @@
 			//navigator.notification.alert(url);
 			url = url.replace(/'/g, "&rsquo;");
 			url = url.replace(/(?:\r\n|\r|\n)/g, '<br/>'); // Replaces line breaks by <br/>
-			// Sends Auction Request to LaCentrale.Taxi appserver
+			// Sends Auction Request to LacentraleTAXI appserver
 			$('#dblinks').append($('<input class="cabs" id="' + i + '" type="hidden" onclick="sendJob(\''+ url +'\')" />'));
 			//$.post("https://www.lacentrale.taxi/appserver/diary_app_share.php", url, function(data) {});
 		}, "xml").fail(function (jqXHR, textStatus, errorThrown) {
-				navigator.notification.alert('Erreur inconnue, le serveur ou la connexion internet sont indisponibles. ' + textStatus+', '+ errorThrown, alertDismissed, 'LaCentrale.Taxi Erreur', 'OK');
+				navigator.notification.alert('Erreur inconnue, le serveur ou la connexion internet sont indisponibles. ' + textStatus+', '+ errorThrown, alertDismissed, 'LacentraleTAXI Erreur', 'OK');
 		});
 		$.mobile.loading( "hide" );
 		$('#dblinks').append($('<input id="stop" type="hidden" value="0" />'));
@@ -2783,15 +2783,15 @@
 			//navigator.notification.alert(url);
 			url = url.replace(/'/g, "&rsquo;");
 			url = url.replace(/(?:\r\n|\r|\n)/g, '<br/>'); // Replaces line breaks by <br/>
-			// Sends Auction Request to LaCentrale.Taxi appserver
+			// Sends Auction Request to LacentraleTAXI appserver
 			$('#dblinks').append($('<input class="cabs" id="' + i + '" type="hidden" onclick="sendJob(\''+ url +'\')" />'));
 			*/
 			//$.post("https://www.lacentrale.taxi/appserver/diary_app_share.php", url, function(data) {});
 		}, "xml").fail(function (jqXHR, textStatus, errorThrown) {
-			navigator.notification.alert('Erreur inconnue, le serveur ou la connexion internet sont indisponibles. ' + textStatus+', '+ errorThrown, alertDismissed, 'LaCentrale.Taxi Erreur', 'OK');
+			navigator.notification.alert('Erreur inconnue, le serveur ou la connexion internet sont indisponibles. ' + textStatus+', '+ errorThrown, alertDismissed, 'LacentraleTAXI Erreur', 'OK');
 		}).done(function () {
 			if(!cabAvail) {
-				if(app) navigator.notification.alert('Nous n\'avons pas trouvé de Taxi pour cette demande, il semblerait qu\'aucun vehicule correspondant à ces critères ne se trouve dans cette zone, désolé.', alertDismissed, 'LaCentrale.Taxi', 'OK');
+				if(app) navigator.notification.alert('Nous n\'avons pas trouvé de Taxi pour cette demande, il semblerait qu\'aucun vehicule correspondant à ces critères ne se trouve dans cette zone, désolé.', alertDismissed, 'LacentraleTAXI', 'OK');
 				else alert('Nous n\'avons pas trouvé de Taxi pour cette demande, il semblerait qu\'aucun vehicule correspondant à ces critères ne se trouve dans cette zone, désolé.');
 				//$.mobile.pageContainer.pagecontainer("change", "#infos", { transition: "slide"} );
 				document.location.href='index.html';
@@ -2831,22 +2831,22 @@
 				//check_answer_open();
 			}
 			else if (data.message == 'banned') {
-				if(app) navigator.notification.alert("Erreur: La demande n'a pas été envoyée, votre compte a été temporairement exclu par l'état du dispositif le.taxi, veuillez nous pardonner ce contretemps.", alertDismissed, 'LaCentrale.Taxi', 'OK');
+				if(app) navigator.notification.alert("Erreur: La demande n'a pas été envoyée, votre compte a été temporairement exclu par l'état du dispositif le.taxi, veuillez nous pardonner ce contretemps.", alertDismissed, 'LacentraleTAXI', 'OK');
 				else alert("Erreur: La demande n'a pas été envoyée, votre compte a été temporairement exclu par l'état du dispositif le.taxi, veuillez nous pardonner ce contretemps.");
 				document.location.href='index.html';
 			}
 			else if (data.message == 'available') {
-				if(app) navigator.notification.alert("Erreur: Ce Taxi n'est plus disponible ! Veuillez nous pardonner ce contretemps.", alertDismissed, 'LaCentrale.Taxi', 'OK');
+				if(app) navigator.notification.alert("Erreur: Ce Taxi n'est plus disponible ! Veuillez nous pardonner ce contretemps.", alertDismissed, 'LacentraleTAXI', 'OK');
 				else alert("Erreur: Ce Taxi n'est plus disponible ! Veuillez nous pardonner ce contretemps.");
 			}
 			else {
-				if(app) navigator.notification.alert("Erreur: La demande n'a pas été envoyée, vous allez devoir recommencer, veuillez nous pardonner ce contretemps.", alertDismissed, 'LaCentrale.Taxi', 'OK');
+				if(app) navigator.notification.alert("Erreur: La demande n'a pas été envoyée, vous allez devoir recommencer, veuillez nous pardonner ce contretemps.", alertDismissed, 'LacentraleTAXI', 'OK');
 				else alert("Erreur: La demande n'a pas été envoyée, vous allez devoir recommencer, veuillez nous pardonner ce contretemps.");
 			}
 		}, "json").always(function(data) {
 			$.mobile.loading( "hide" );
 		}).fail(function() { 
-			if(app) navigator.notification.alert("Erreur: La demande n'a pas été envoyée, vous allez devoir recommencer, veuillez nous pardonner ce contretemps.", alertDismissed, 'LaCentrale.Taxi', 'OK');
+			if(app) navigator.notification.alert("Erreur: La demande n'a pas été envoyée, vous allez devoir recommencer, veuillez nous pardonner ce contretemps.", alertDismissed, 'LacentraleTAXI', 'OK');
 			else alert("Erreur: La demande n'a pas été envoyée, vous allez devoir recommencer, veuillez nous pardonner ce contretemps.");
 			document.location.href='index.html';
 		});
@@ -2894,7 +2894,7 @@
 						toNotify = data.display;
 						cordova.plugins.notification.local.schedule({
 							id: 1,
-							title: "LaCentrale.Taxi",
+							title: "LacentraleTAXI",
 							text: toNotify,
 							led: { color: '#0069B4', on: 500, off: 500 },
 							badge: badgeNumber,
@@ -2973,7 +2973,7 @@
 						toNotify = data.split("<", 1);
 						cordova.plugins.notification.local.schedule({
 							id: 1,
-							title: "LaCentrale.Taxi",
+							title: "LacentraleTAXI",
 							text: "Un Taxi a pris la course, il va passer vous prendre...",
 							led: { color: '#0069B4', on: 500, off: 500 },
 							badge: badgeNumber,
@@ -3081,7 +3081,7 @@
 				var success = function () {
 				};
 				var error = function (e) {
-					if(app) navigator.notification.alert("L'incident a été déclaré toutefois, votre appareil semble ne pas gérer les sms, veuillez contacter le chauffeur pour l'avertir SVP.", alertDismissed, 'LaCentrale.Taxi', 'OK');
+					if(app) navigator.notification.alert("L'incident a été déclaré toutefois, votre appareil semble ne pas gérer les sms, veuillez contacter le chauffeur pour l'avertir SVP.", alertDismissed, 'LacentraleTAXI', 'OK');
 					else alert("L'incident a été déclaré toutefois, votre appareil semble ne pas gérer les sms, veuillez contacter le chauffeur pour l'avertir SVP.");
 				};
 				sms.send(number, message, options, success, error);
@@ -3089,7 +3089,7 @@
 				//return false;
 			}
 			else {
-				if(app) navigator.notification.alert("Erreur: L'incident n'a pas été déclaré.", alertDismissed, 'LaCentrale.Taxi', 'OK');
+				if(app) navigator.notification.alert("Erreur: L'incident n'a pas été déclaré.", alertDismissed, 'LacentraleTAXI', 'OK');
 				else alert("Erreur: L'incident n'a pas été déclaré.");
 			}
 		}, "json");
@@ -3130,7 +3130,7 @@
 			});
 		}
 		else {
-			if(app) navigator.notification.alert("Vous devez rensigner les adresses de départ et d'arrivée.", alertDismissed, 'LaCentrale.Taxi', 'OK');
+			if(app) navigator.notification.alert("Vous devez rensigner les adresses de départ et d'arrivée.", alertDismissed, 'LacentraleTAXI', 'OK');
 			else alert("Vous devez rensigner les adresses de départ et d'arrivée.");
 		}
 	}
@@ -3190,9 +3190,9 @@
           <li><a href="#prices" class="ui-btn ui-btn-icon-left ui-icon-info" data-transition="slide"><b>Tarification</b></a></li>
           <li><a href="#assos" class="ui-btn ui-btn-icon-left ui-icon-heart" data-transition="slide"><b>Nous soutenons</b></a></li>
 		  <li><a href="#" onClick="Share()" class="ui-btn ui-btn-icon-left ui-icon-mail noAppHide"><b>Partager l&rsquo;app</b></a></li>
-		  <li><a href="#" onclick="window.plugins.socialsharing.share('Téléchargez LaCentrale.Taxi sur LaCentrale.Taxi', null, 'https://www.lacentrale.taxi/icon_300.png', 'https://www.lacentrale.taxi/stores.php?app=cvclient')" class="ui-btn ui-btn-icon-left ui-icon-mail noAppHide"><b>Partager l&rsquo;app</b></a></li>
+		  <li><a href="#" onclick="window.plugins.socialsharing.share('Téléchargez LacentraleTAXI sur LaCentrale.Taxi', null, 'https://www.lacentrale.taxi/icon_300.png', 'https://www.lacentrale.taxi/stores.php?app=cvclient')" class="ui-btn ui-btn-icon-left ui-icon-mail noAppHide"><b>Partager l&rsquo;app</b></a></li>
 		   -->
- 		  <li><a href="#" onclick="window.plugins.socialsharing.share('Téléchargez LaCentrale.Taxi sur LaCentrale.Taxi', null, null, 'https://www.lacentrale.taxi/stores.php?app=cvclient')" class="ui-btn ui-btn-icon-left ui-icon-mail noAppHide"><b>Partager l&rsquo;app</b></a></li>
+ 		  <li><a href="#" onclick="window.plugins.socialsharing.share('Téléchargez LacentraleTAXI sur LaCentrale.Taxi', null, null, 'https://www.lacentrale.taxi/stores.php?app=cvclient')" class="ui-btn ui-btn-icon-left ui-icon-mail noAppHide"><b>Partager l&rsquo;app</b></a></li>
          <!-- <li><a href="#" onClick="goScan()" data-transition="slide" class="ui-btn ui-btn-icon-left ui-icon-camera noAppHide"><b>Scanner un code</b></a></li> -->
         </ul>
         <button class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left ui-icon-power" onClick="dc()">D&eacute;connexion</button>
@@ -3391,7 +3391,7 @@
                     	<p>
                             Si cela ne vous ennuie pas, pourquoi ne pas prendre un instant pour partager l&rsquo;app avec des amis.
                         </p>
-                        <a href="#" onclick="window.plugins.socialsharing.share('Téléchargez LaCentrale.Taxi sur LaCentrale.Taxi', null, null, 'https://www.lacentrale.taxi/stores.php?app=cvclient')" class="ui-btn ui-corner-all ui-shadow ui-btn-icon-left ui-icon-mail noAppHide">Oui je partage</a>
+                        <a href="#" onclick="window.plugins.socialsharing.share('Téléchargez LacentraleTAXI sur LaCentrale.Taxi', null, null, 'https://www.lacentrale.taxi/stores.php?app=cvclient')" class="ui-btn ui-corner-all ui-shadow ui-btn-icon-left ui-icon-mail noAppHide">Oui je partage</a>
 						<a href="#infos" data-rel="back" class="ui-btn ui-btn-icon-left ui-corner-all ui-shadow ui-btn-b ui-icon-delete">Non, merci</a>
                     </div>
                 </div>
@@ -3655,7 +3655,7 @@
 			</table>
 			<div id="animBook" class="nyc">
 				<p class="bottomText"><b>
-					<br><br>Votre demande a &eacute;t&eacute; prise en compte, votre Taxi prendra contact avec vous par t&eacute;l&eacute;phone ou sms.<br><br>Toute l&rsquo;&eacute;quipe LaCentrale.Taxi vous remercie.
+					<br><br>Votre demande a &eacute;t&eacute; prise en compte, votre Taxi prendra contact avec vous par t&eacute;l&eacute;phone ou sms.<br><br>Toute l&rsquo;&eacute;quipe LacentraleTAXI vous remercie.
 					<button class="ui-btn ui-corner-all ui-shadow ui-btn-c ui-btn-icon-left ui-icon-back" onClick="goback('index.html')">Retour</button>
 				</b></p>
 				<img src="visuels/wifi-1.png" width="64%" id="wifiSteps" class="wifiSteps"/>
